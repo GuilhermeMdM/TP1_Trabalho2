@@ -103,7 +103,7 @@ bool StubIServicoControle::visualizar(const Conta* conta) {
 
     // Diferentes comportamentos dependendo do valor do email.
 
-    switch(conta.getEmail().getValor()){
+    switch(conta->getEmail().getValor()){
         case TRIGGER_FALHA:
             resultado = false;
             break;
