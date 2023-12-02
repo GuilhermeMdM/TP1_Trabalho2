@@ -12,7 +12,7 @@ class IServicoAutenticacao;
 class IApresentacaoAutenticacao{
     public:
         virtual bool autenticar(Email*) = 0;
-        virtual void setCntrSAutenticacao(IServicoAutenticacao*) = 0;
+        virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
         virtual ~IApresentacaoAutenticacao(){}
 };
 
@@ -28,7 +28,7 @@ class IApresentacaoControle{
     public:
         virtual void cadastrar() = 0;
         virtual void executar(Email) = 0;
-        virtual void setCntrSControle(IServicoControle*) = 0;
+        virtual void setCntrServicoControle(IServicoControle*) = 0;
         virtual ~IApresentacaoControle(){} 
 };
 
