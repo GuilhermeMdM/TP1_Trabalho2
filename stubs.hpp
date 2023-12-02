@@ -15,8 +15,8 @@ public:
 
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
-    const static int TRIGGER_FALHA        = 67890;
-    const static int TRIGGER_ERRO_SISTEMA = 78901;
+    const static string TRIGGER_FALHA;
+    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declaração de método relacionado na interface.
 
@@ -31,8 +31,8 @@ public:
 
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
-    const static int TRIGGER_FALHA        = 67890;
-    const static int TRIGGER_ERRO_SISTEMA = 78901;
+    const static string TRIGGER_FALHA;
+    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declarações de métodos relacionados na interface.
 
@@ -50,8 +50,8 @@ public:
 
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
-    const static int TRIGGER_FALHA        = 67890;
-    const static int TRIGGER_ERRO_SISTEMA = 78901;
+    const static string TRIGGER_FALHA;
+    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declaração de método relacionado na interface.
 
