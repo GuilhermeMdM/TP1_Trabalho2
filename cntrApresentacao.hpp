@@ -5,9 +5,9 @@
 #include <iostream>
 #include <string.h>
 
-#include "biblioteca_de_classes/dominios.hpp"
-#include "biblioteca_de_classes/entidades.hpp"
-#include "biblioteca_de_classes/auxiliar.hpp"
+#include "dominios.hpp"
+#include "entidades.hpp"
+#include "auxiliar.hpp"
 #include "interfaces.hpp"
 
 #define CLR_SCR system("cls");
@@ -43,13 +43,13 @@ inline void CntrApresentacaoInicializacao::setCntrIApresentacaoProjetos(IApresen
 //Autor: 221006431
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao{
     private:
-    IServicoAutenticacao* cntr;
+        IServicoAutenticacao* cntr;
     public:
-    bool autenticar(Email*);
-    void setCntrSAutenticacao(IServicoAutenticacao*);
+        bool autenticar(Email*);
+        void setCntrServicoAutenticacao(IServicoAutenticacao*);
 };
 
-inline void CntrApresentacaoAutenticacao::setCntrSAutenticacao(IServicoAutenticacao *cntr){
+inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAutenticacao *cntr){
     this->cntr = cntr;
 };
 
@@ -62,14 +62,12 @@ class CntrApresentacaoControle: public IApresentacaoControle{
         Conta conta;
     public:
         void executar(Email);
-        void setCntrSControle(IServicoControle*);
+        void setCntrServicoControle(IServicoControle*);
+        void cadastrar();
 };
 
-inline void CntrApresentacaoControle::setCntrSControle(IServicoControle* cntr){
+inline void CntrApresentacaoControle::setCntrServicoControle(IServicoControle* cntr){
     this->cntr = cntr;
 };
-
-
-
 
 #endif // CNTRLAPRESENTACAO_H_INCLUDED
