@@ -9,6 +9,7 @@
 #include "entidades.hpp"
 #include "auxiliar.hpp"
 #include "interfaces.hpp"
+#include <limits>
 
 #define CLR_SCR system("cls");
 
