@@ -28,7 +28,7 @@ class CntrApresentacaoInicializacao{
         void setCntrIApresentacaoProjetos(IApresentacaoProjetos*);
 };
 
-inline void CntrIApresentacaoInicializacao::setCntrIApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
+inline void CntrApresentacaoInicializacao::setCntrIApresentacaoAutenticacao(IApresentacaoAutenticacao *cntr){
     cntrIApresentacaoAutenticacao = cntr;
 }
 
