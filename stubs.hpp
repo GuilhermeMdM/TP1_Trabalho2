@@ -4,6 +4,10 @@
 #include "interfaces.hpp"
 #include <stdexcept>
 #include <iostream>
+#include <string.h>
+#include <conio.h>
+
+#define CLR_SCR system("cls");
 
 using namespace std;
 
@@ -16,7 +20,6 @@ public:
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
     const static string TRIGGER_FALHA;
-    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declaração de método relacionado na interface.
 
@@ -32,7 +35,6 @@ public:
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
     const static string TRIGGER_FALHA;
-    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declarações de métodos relacionados na interface.
 
@@ -51,7 +53,6 @@ public:
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
     const static string TRIGGER_FALHA;
-    const static string TRIGGER_ERRO_SISTEMA;
 
     // Declaração de método relacionado na interface.
 
