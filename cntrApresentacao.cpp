@@ -1,5 +1,83 @@
 #include "cntrApresentacao.hpp"
 
+void CntrApresentacaoInicializacao::executar(){
+
+    // Mensagens a serem apresentadas na tela inicial.
+    char texto0[]="Tela inicial de sistema.";
+    char texto1[]="Selecione um dos serviços : ";
+    char texto2[]="1 - Autenticar.";
+    char texto3[]="2 - Cadastrar.";
+    char texto4[]="3 - Encerrar execução do sistema.";
+
+    // Mensagens a serem apresentadas na tela de seleção de serviço.
+
+    char texto5[]="Selecione um dos serviços : ";
+    char texto6[]="1 - Editar conta.";
+    char texto7[]="2 - Gerenciar projetos.";
+    char texto8[]="3 - Encerrar sessao.";
+
+    char texto9[]="Falha na autenticação. Digite algo para continuar.";                         // Mensagem a ser apresentada.
+
+    int campo;                                                                                  // Campo de entrada.
+
+    bool apresentar = true;                                                                     // Controle de laço.
+
+    while(apresentar){
+
+        // Apresenta tela inicial.
+
+        CLR_SCR;                                                                                // Limpa janela.
+
+        cout << texto0 << endl;
+        cout << "\n";
+        cout << texto1 << endl;                                                                 // Imprime nome do campo.
+        cout << texto2 << endl;                                                                 // Imprime nome do campo.
+        cout << texto3 << endl;                                                                 // Imprime nome do campo.
+        cout << texto4 << endl;
+
+        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversão de ASCII.
+
+        switch(campo){
+            case 1: if(cntrIApresentacaoAutenticacao->autenticar(&email)){                         // Solicita autenticação.
+                        bool apresentar = true;                                                 // Controle de laço.
+                        while(apresentar){
+
+                            // Apresenta tela de seleção de serviço.
+
+                            CLR_SCR;                                                            // Limpa janela.
+
+                            cout << texto5 << endl;                                             // Imprime nome do campo.
+                            cout << texto6 << endl;                                             // Imprime nome do campo.
+                            cout << texto7 << endl;                                             // Imprime nome do campo.
+                            cout << texto8 << endl;                                             // Imprime nome do campo.
+
+                            campo = getch() - 48;                                               // Leitura do campo de entrada e conversão de ASCII.
+
+                            switch(campo){
+                                case 1: cntrIApresentacaoControle->executar(email);                 // Solicita serviço de pessoal.
+                                        break;
+                                case 2: cntrIApresentacaoProjetos->executar(email);     // Solicita serviço de produto financeiro.
+                                        break;
+                                case 3: apresentar = false;
+                                        break;
+                            }
+                        }
+                    }
+                    else {
+                        CLR_SCR;                                                                // Limpa janela.
+                        cout << texto9 << endl;                                                 // Imprime mensagem.
+                        getch();                                                                // Leitura de caracter digitado.
+                    }
+                    break;
+            case 2: cntrIApresentacaoControle->cadastrar();
+                    break;
+            case 3: apresentar = false;
+                    break;
+        }
+    }
+    return;
+}
+
 bool CntrApresentacaoAutenticacao::autenticar(Email* email){
 
     char texto1[]="Digite o e-mail  : ";
