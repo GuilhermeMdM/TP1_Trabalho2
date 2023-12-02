@@ -84,36 +84,34 @@ bool CntrApresentacaoAutenticacao::autenticar(Email* email){
     char texto2[]="Digite a senha: ";
     char texto3[]="Dado em formato incorreto. Digite algo.";
 
-
     char campo1[80];
     char campo2[80];
 
-    Senha senha;                                                                                
+    Senha senha;
 
     while(true){
 
 
-        CLR_SCR;                                                                                
+        CLR_SCR;
 
-        cout << texto1 << " ";                                                                  
-        cin >> campo1;                                          
-        cout << texto2 << " ";                                          
-        cin >> campo2;                                              
+        cout << texto1 << " ";
+        cin >> campo1;
+        cout << texto2 << " ";
+        cin >> campo2;
 
         try{
-            email->setValor(string(campo1));                             
-            senha.setValor(string(campo2));                             
-            break;                                                                           
+            email->setValor(string(campo1));
+            senha.setValor(string(campo2));
+            break;
         }
-        catch(invalid_argument &exp){                                                        
-            CLR_SCR;                                           
-            cout << texto3 << endl;                                         
-            getch();                                                   
+        catch(invalid_argument &exp){
+            CLR_SCR;
+            cout << texto3 << endl;
+            getch();
         }
     }
-    return (cntr->autenticar(*email, senha));                                        
+    return (cntr->autenticar(*email, senha));
 }
-
 
 void CntrApresentacaoControle::executar(Email email){
 
@@ -125,7 +123,7 @@ void CntrApresentacaoControle::executar(Email email){
     char texto5[]="4 - Editar conta.";
     char texto6[]="5 - Visualizar conta.";
 
-    int campo;                                                                                  
+    int campo;
 
     bool apresentar = true;
 
@@ -137,7 +135,7 @@ void CntrApresentacaoControle::executar(Email email){
         cout<<texto2<<endl;
         cout<<texto3<<endl;
 
-        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversao de ASCII. 
+        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversao de ASCII.
 
         switch(campo){
             case 1: cntr->cadastrar(conta);
@@ -147,7 +145,7 @@ void CntrApresentacaoControle::executar(Email email){
             cout<<texto5<<endl;
             cout<<texto6<<endl;
 
-            campo = getch() - 48; 
+            campo = getch() - 48;
 
             switch(campo){
                 case 3: cntr->eliminar(email);
@@ -155,7 +153,5 @@ void CntrApresentacaoControle::executar(Email email){
                 case 5: cntr->visualizar(&conta);
             }
         }
-
     }
-
 }
