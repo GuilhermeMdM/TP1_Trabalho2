@@ -119,9 +119,12 @@ void CntrApresentacaoControle::executar(Email email){
     char texto2[]="1 - Cadastrar usuario.";
     char texto3[]="2 - Configurações de conta.";
 
-    char texto4[]="3 - eliminar conta.";
-    char texto5[]="4 - Editar conta.";
-    char texto6[]="5 - Visualizar conta.";
+    char texto4[]="1 - Eliminar conta.";
+    char texto5[]="2 - Editar conta.";
+    char texto6[]="3 - Visualizar conta.";
+    char texto7[]="4 - Voltar.";
+
+    char texto8[]="3 - Voltar.";
 
     int campo;
 
@@ -134,24 +137,37 @@ void CntrApresentacaoControle::executar(Email email){
         cout<<texto1<<endl;
         cout<<texto2<<endl;
         cout<<texto3<<endl;
+        cout<<texto8<<endl;
 
         campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversao de ASCII.
 
         switch(campo){
             case 1: cntr->cadastrar(conta);
+                break;
             case 2:
-            cout<<texto1<<endl;
-            cout<<texto4<<endl;
-            cout<<texto5<<endl;
-            cout<<texto6<<endl;
 
-            campo = getch() - 48;
+                CLR_SCR;
 
-            switch(campo){
-                case 3: cntr->eliminar(email);
-                case 4: cntr->editar(conta);
-                case 5: cntr->visualizar(&conta);
-            }
+                cout<<texto1<<endl;
+                cout<<texto4<<endl;
+                cout<<texto5<<endl;
+                cout<<texto6<<endl;
+                cout<<texto7<<endl;
+
+                campo = getch() - 48;
+
+                switch(campo){
+                    case 1: cntr->eliminar(email);
+                    case 2: cntr->editar(conta);
+                    case 3: cntr->visualizar(&conta);
+                    case 4: break;
+                }
+                break;
+            case 3:
+                apresentar = false;
+                break;
         }
+
     }
+
 }
