@@ -59,7 +59,7 @@ class IServicoProjetos{
         virtual void criarCartao(const Quadro) = 0;
         virtual void visualizarCartao(const Cartao*) = 0;
         virtual void moverCartao(Coluna) = 0;
-        virtual void eliminarCartao(const Cartao) = 0;
+        virtual void eliminarCartao(const Conta, const Cartao) = 0;
 
         virtual ~IServicoProjetos(){}
 };
