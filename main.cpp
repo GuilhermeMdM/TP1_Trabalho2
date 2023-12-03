@@ -18,34 +18,34 @@ int main()
 
     IApresentacaoAutenticacao  *cntrIApresentacaoAutenticacao;
     IApresentacaoControle      *cntrIApresentacaoControle;
-    //IApresentacaoProjetos      *cntrIApresentacaoProjetos;
+    IApresentacaoProjetos      *cntrIApresentacaoProjetos;
 
     cntrApresentacaoInicializacao = new CntrApresentacaoInicializacao();
     cntrIApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
     cntrIApresentacaoControle     = new CntrApresentacaoControle();
-    //cntrIApresentacaoProjetos     = new CntrApresentacaoProjetos();
+    cntrIApresentacaoProjetos     = new CntrApresentacaoProjetos();
 
     // -------------------------------------------------------------------------------------------
     // Declarar ponteiros e instanciar stubs.
 
     IServicoAutenticacao *stubIServicoAutenticacao;
     IServicoControle     *stubIServicoControle;
-    //IServicoProjetos     *stubIServicoProjetos;
+    IServicoProjetos     *stubIServicoProjetos;
 
     stubIServicoAutenticacao = new StubIServicoAutenticacao();
     stubIServicoControle     = new StubIServicoControle();
-    //stubIServicoProjetos     = new StubIServicoProjetos();
+    stubIServicoProjetos     = new StubIServicoProjetos();
 
     // -------------------------------------------------------------------------------------------
     // Estabelecer relacionamentos entre instâncias de controladoras e instâncias de stubs.
 
     cntrApresentacaoInicializacao->setCntrIApresentacaoAutenticacao(cntrIApresentacaoAutenticacao);
     cntrApresentacaoInicializacao->setCntrIApresentacaoControle(cntrIApresentacaoControle);
-    //cntrApresentacaoInicializacao->setCntrIApresentacaoProjetos(cntrIApresentacaoProjetos);
+    cntrApresentacaoInicializacao->setCntrIApresentacaoProjetos(cntrIApresentacaoProjetos);
 
     cntrIApresentacaoAutenticacao->setCntrServicoAutenticacao(stubIServicoAutenticacao);
     cntrIApresentacaoControle->setCntrServicoControle(stubIServicoControle);
-    //cntrIApresentacaoProjetos->setCntrServicoProjetos(stubIServicoProjetos);
+    cntrIApresentacaoProjetos->setCntrServicoProjetos(stubIServicoProjetos);
 
     cntrApresentacaoInicializacao->executar();
 
@@ -53,12 +53,12 @@ int main()
 
     delete cntrIApresentacaoAutenticacao;
     delete cntrIApresentacaoControle;
-    //delete cntrIApresentacaoProjetos;
+    delete cntrIApresentacaoProjetos;
     delete cntrApresentacaoInicializacao;
 
     delete stubIServicoAutenticacao;
     delete stubIServicoControle;
-    //delete stubIServicoProjetos;
+    delete stubIServicoProjetos;
 
     return 0;
 }
