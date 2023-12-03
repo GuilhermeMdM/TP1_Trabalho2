@@ -18,7 +18,7 @@ class IApresentacaoAutenticacao{
 
 class IServicoAutenticacao{
     public:
-        virtual bool autenticar(const Email&, const Senha&) = 0;
+        virtual bool autenticar(Email&, Senha&) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
