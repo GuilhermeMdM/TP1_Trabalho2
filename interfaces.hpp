@@ -1,8 +1,8 @@
 #ifndef INTERFACES_H_INCLUDED
 #define INTERFACES_H_INCLUDED
 
-#include "dominios.hpp"
-#include "entidades.hpp"
+#include "biblioteca_de_classes/dominios.hpp"
+#include "biblioteca_de_classes/entidades.hpp"
 #include <stdexcept>
 
 using namespace std;
