@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string.h>
 #include <conio.h>
+#include <limits>
 
 #define CLR_SCR system("cls");
 
@@ -52,13 +53,13 @@ public:
 
     // Definições de valores a serem usados como gatilhos para notificações de erros.
 
-    const static string TRIGGER_FALHA;
+    const string TRIGGER_FALHA;
 
     // Declaração de método relacionado na interface.
 
     void criarQuadro(const Conta);
     void visualizarQuadro(const Quadro*);
-    void eliminarQuadro(const Quadro);
+    void eliminarQuadro(const Conta, const Quadro);
 
     void criarCartao(const Quadro);
     void visualizarCartao(const Cartao*);
