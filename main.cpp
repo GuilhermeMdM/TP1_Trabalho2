@@ -3,7 +3,7 @@
 #include <string>
 
 #include "biblioteca_de_classes/dominios.hpp"
-#include "biblioteca_de_classes/interfaces.hpp"
+#include "interfaces.hpp"
 #include "cntrApresentacao.hpp"
 #include "stubs.hpp"
 
