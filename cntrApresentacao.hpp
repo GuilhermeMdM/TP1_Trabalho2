@@ -7,7 +7,7 @@
 
 #include "biblioteca_de_classes/dominios.hpp"
 #include "biblioteca_de_classes/entidades.hpp"
-#include "auxiliar.hpp"
+#include "biblioteca_de_classes/auxiliar.hpp"
 #include "interfaces.hpp"
 #include <limits>
 
