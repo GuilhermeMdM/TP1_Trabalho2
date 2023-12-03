@@ -71,4 +71,21 @@ inline void CntrApresentacaoControle::setCntrServicoControle(IServicoControle* c
     this->cntr = cntr;
 };
 
+class CntrApresentacaoProjetos: public IApresentacaoProjetos{
+    private:
+        IServicoProjetos* cntr;
+        Email email;
+        Conta conta;
+        Quadro quadro;
+        Cartao cartao;
+        Coluna coluna;
+    public:
+        void executar(Email);
+        void setCntrServicoProjetos(IServicoProjetos*);
+};
+
+inline void CntrApresentacaoProjetos::setCntrServicoProjetos(IServicoProjetos *cntr){
+    this->cntr = cntr;
+}
+
 #endif // CNTRLAPRESENTACAO_H_INCLUDED
