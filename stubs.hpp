@@ -2,6 +2,7 @@
 #define STUBS_H_INCLUDED
 
 #include "interfaces.hpp"
+
 #include <stdexcept>
 #include <iostream>
 #include <string.h>
@@ -24,7 +25,7 @@ public:
 
     // Declaração de método relacionado na interface.
 
-    bool autenticar(Email&, Senha&);
+    bool autenticar(const Email&, const Senha&);
 };
 
 //----------------------------------------------------------------------------
@@ -40,7 +41,7 @@ public:
     // Declarações de métodos relacionados na interface.
 
     bool cadastrar(const Conta);
-    bool eliminar(Email);
+    bool eliminar(const Email);
     bool editar(const Conta);
     bool visualizar(const Conta*);
 };
