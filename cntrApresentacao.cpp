@@ -273,7 +273,6 @@ void CntrApresentacaoProjetos::executar(Email email) {
     char texto10[]="Digite o código do quadro: ";
     char texto11[]="Dado em formato incorreto. Digite algo.";
     char texto12[]="Digite o código do cartão: ";
-    char texto13[]="Digite a nova coluna: ";
 
     char campo1[80];
 
