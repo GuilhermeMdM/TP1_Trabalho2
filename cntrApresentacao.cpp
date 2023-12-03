@@ -12,7 +12,7 @@ void CntrApresentacaoInicializacao::executar(){
     // Mensagens a serem apresentadas na tela de seleção de serviço.
 
     char texto5[]="Selecione um dos serviços : ";
-    char texto6[]="1 - Editar conta.";
+    char texto6[]="1 - Gerenciamento de conta.";
     char texto7[]="2 - Gerenciar projetos.";
     char texto8[]="3 - Encerrar sessao.";
 
