@@ -375,6 +375,7 @@ void CntrApresentacaoProjetos::executar(Email email) {
                 cntr->visualizarCartao(&cartao);
                 break;
             case 6:
+
                 cntr->moverCartao(coluna);
                 break;
             case 7:
