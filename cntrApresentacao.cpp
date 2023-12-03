@@ -56,7 +56,7 @@ void CntrApresentacaoInicializacao::executar(){
                             switch(campo){
                                 case 1: cntrIApresentacaoControle->executar(email);                 // Solicita serviço de pessoal.
                                         break;
-                                case 2: cntrIApresentacaoProjetos->executar(email);     // Solicita serviço de produto financeiro.
+                                case 2: //cntrIApresentacaoProjetos->executar(email);     // Solicita serviço de produto financeiro.
                                         break;
                                 case 3: apresentar = false;
                                         break;
