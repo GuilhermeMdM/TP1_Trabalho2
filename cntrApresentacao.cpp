@@ -40,6 +40,7 @@ void CntrApresentacaoInicializacao::executar(){
         switch(campo){
             case 1: if(cntrIApresentacaoAutenticacao->autenticar(&email)){                         // Solicita autenticação.
                         bool apresentar = true;                                                 // Controle de laço.
+
                         while(apresentar){
 
                             // Apresenta tela de seleção de serviço.
@@ -56,7 +57,7 @@ void CntrApresentacaoInicializacao::executar(){
                             switch(campo){
                                 case 1: cntrIApresentacaoControle->executar(email);                 // Solicita serviço de pessoal.
                                         break;
-                                case 2: //cntrIApresentacaoProjetos->executar(email);     // Solicita serviço de produto financeiro.
+                                case 2: cntrIApresentacaoProjetos->executar(email);     // Solicita serviço de produto financeiro.
                                         break;
                                 case 3: apresentar = false;
                                         break;
@@ -114,7 +115,6 @@ bool CntrApresentacaoAutenticacao::autenticar(Email* email){
     }
     return (cntr->autenticar(*email, senha));
 }
-
 void CntrApresentacaoControle::cadastrar(){
 
     // Mensagens a serem apresentadas na tela de cadastramento.
@@ -185,15 +185,12 @@ void CntrApresentacaoControle::cadastrar(){
 void CntrApresentacaoControle::executar(Email email){
 
     char texto1[]="Selecione um dos servicos : ";
-    char texto2[]="1 - Cadastrar usuario.";
-    char texto3[]="2 - Configurações de conta.";
 
     char texto4[]="1 - Eliminar conta.";
     char texto5[]="2 - Editar conta.";
     char texto6[]="3 - Visualizar conta.";
     char texto7[]="4 - Voltar.";
 
-    char texto8[]="3 - Voltar.";
     char texto9[]="Sucesso no método requerido. Digite algo.";
     char texto10[]="Falha no método requerido. Digite algo.";
 
@@ -201,21 +198,9 @@ void CntrApresentacaoControle::executar(Email email){
 
     bool apresentar = true;
 
+    conta.setEmail(email);
+
     while(apresentar){
-
-        CLR_SCR;
-
-        cout<<texto1<<endl;
-        cout<<texto2<<endl;
-        cout<<texto3<<endl;
-        cout<<texto8<<endl;
-
-        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversao de ASCII.
-
-        switch(campo){
-            case 1: cntr->cadastrar(conta); 
-                break;
-            case 2:
 
                 CLR_SCR;
 
@@ -266,14 +251,157 @@ void CntrApresentacaoControle::executar(Email email){
                         break;
 
                     case 4:
+                        apresentar = false;
                         break;
                 }
+    }
+}
+
+void CntrApresentacaoProjetos::executar(Email email) {
+
+    // Mensagens a serem apresentadas tela completa de produtos financeiros.
+
+    char texto1[] ="Selecione um dos servicos : ";
+    char texto2[] ="1 - Criar Quadro.";
+    char texto3[] ="2 - Visualizar Quadro.";
+    char texto4[] ="3 - Eliminar Quadro.";
+    char texto5[] ="4 - Criar Cartão";
+    char texto6[] ="5 - Visualizar Cartão.";
+    char texto7[] ="6 - Mover Cartão.";
+    char texto8[] ="7 - Eliminar cartão.";
+    char texto9[] ="8 - Retornar.";
+    char texto10[]="Digite o código do quadro: ";
+    char texto11[]="Dado em formato incorreto. Digite algo.";
+    char texto12[]="Digite o código do cartão: ";
+    char texto13[]="Digite a nova coluna: ";
+
+    char campo1[80];
+
+    int campo;                                                                                  // Campo de entrada.
+
+    bool apresentar = true;                                                                     // Controle de laço.
+
+    conta.setEmail(email);
+
+    while(apresentar){
+
+        // Apresenta tela completa de produtos financeiros.
+
+        CLR_SCR;                                                                                // Limpa janela.
+
+        cout << texto1 << endl;                                                                 // Imprime nome do campo.
+        cout << texto2 << endl;                                                                 // Imprime nome do campo.
+        cout << texto3 << endl;                                                                 // Imprime nome do campo.
+        cout << texto4 << endl;                                                                 // Imprime nome do campo.
+        cout << texto5 << endl;                                                                 // Imprime nome do campo.
+        cout << texto6 << endl;                                                                 // Imprime nome do campo.
+        cout << texto7 << endl;                                                                 // Imprime nome do campo.
+        cout << texto8 << endl;                                                                 // Imprime nome do campo.
+        cout << texto9 << endl;
+
+        campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversão de ASCII.
+
+        switch(campo){
+            case 1:
+                cntr->criarQuadro(conta);
+                break;
+            case 2:
+                while(true){
+                    CLR_SCR;
+                    cout << texto10 << " ";
+                    cin >> campo1;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    Codigo codigoQuadro;
+
+                    try{
+                        codigoQuadro.setValor(string(campo1));
+                        quadro.setCodigo(codigoQuadro);
+                        break;
+                    }
+                    catch(invalid_argument &exp){
+                        CLR_SCR;
+                        cout << texto11 << endl;
+                        getch();
+                    }
+                }
+                cntr->visualizarQuadro(&quadro);
                 break;
             case 3:
+                cntr->eliminarQuadro(conta, quadro);
+                break;
+            case 4:
+                while(true){
+                    CLR_SCR;
+                    cout << texto10 << " ";
+                    cin >> campo1;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    Codigo codigoQuadro;
+
+                    try{
+                        codigoQuadro.setValor(string(campo1));
+                        quadro.setCodigo(codigoQuadro);
+                        break;
+                    }
+                    catch(invalid_argument &exp){
+                        CLR_SCR;
+                        cout << texto11 << endl;
+                        getch();
+                    }
+                }
+                cntr->criarCartao(quadro);
+                break;
+            case 5:
+                while(true){
+                    CLR_SCR;
+                    cout << texto12 << " ";
+                    cin >> campo1;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    Codigo codigoCartao;
+
+                    try{
+                        codigoCartao.setValor(string(campo1));
+                        cartao.setCodigo(codigoCartao);
+                        break;
+                    }
+                    catch(invalid_argument &exp){
+                        CLR_SCR;
+                        cout << texto11 << endl;
+                        getch();
+                    }
+                }
+                cntr->visualizarCartao(&cartao);
+                break;
+            case 6:
+                cntr->moverCartao(coluna);
+                break;
+            case 7:
+                while(true){
+                    CLR_SCR;
+                    cout << texto12 << " ";
+                    cin >> campo1;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                    Codigo codigoCartao;
+
+                    try{
+                        codigoCartao.setValor(string(campo1));
+                        cartao.setCodigo(codigoCartao);
+                        break;
+                    }
+                    catch(invalid_argument &exp){
+                        CLR_SCR;
+                        cout << texto11 << endl;
+                        getch();
+                    }
+                }
+                cntr->eliminarCartao(cartao);
+                break;
+            case 8:
                 apresentar = false;
                 break;
         }
-
     }
-
 }
