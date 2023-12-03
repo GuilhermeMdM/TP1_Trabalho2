@@ -24,7 +24,7 @@ public:
 
     // Declaração de método relacionado na interface.
 
-    bool autenticar(const Email&, const Senha&);
+    bool autenticar(Email&, Senha&);
 };
 
 //----------------------------------------------------------------------------
