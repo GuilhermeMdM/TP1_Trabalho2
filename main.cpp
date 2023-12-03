@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-#include "dominios.hpp"
+#include "biblioteca_de_classes/dominios.hpp"
 #include "interfaces.hpp"
 #include "cntrApresentacao.hpp"
 #include "stubs.hpp"
