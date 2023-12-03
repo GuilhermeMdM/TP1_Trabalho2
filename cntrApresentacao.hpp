@@ -5,8 +5,8 @@
 #include <iostream>
 #include <string.h>
 
-#include "dominios.hpp"
-#include "entidades.hpp"
+#include "biblioteca_de_classes/dominios.hpp"
+#include "biblioteca_de_classes/entidades.hpp"
 #include "auxiliar.hpp"
 #include "interfaces.hpp"
 #include <limits>
