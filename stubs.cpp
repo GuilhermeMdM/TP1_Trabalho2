@@ -7,7 +7,7 @@
 const string StubIServicoAutenticacao::TRIGGER_FALHA = "aa@okcd7";
 
 // Autor: 2110687910
-bool StubIServicoAutenticacao::autenticar(Email &email, Senha &senha){
+bool StubIServicoAutenticacao::autenticar(const Email &email, const Senha &senha){
 
     // Apresentar dados recebidos.
 
