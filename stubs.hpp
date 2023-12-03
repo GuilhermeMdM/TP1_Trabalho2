@@ -40,7 +40,7 @@ public:
     // Declarações de métodos relacionados na interface.
 
     bool cadastrar(const Conta);
-    bool eliminar(const Email);
+    bool eliminar(Email);
     bool editar(const Conta);
     bool visualizar(const Conta*);
 };
