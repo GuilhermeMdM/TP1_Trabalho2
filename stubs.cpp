@@ -4,10 +4,9 @@
 // Implementação de método de classe stub.
 
 
-const string StubIServicoAutenticacao::TRIGGER_FALHA = "bb@okcd7";
-const string StubIServicoControle::TRIGGER_FALHA = "aa@okcd7";
-const string StubIServicoProjetos::TRIGGER_FALHA = "cc@okcd7";
+const string StubIServicoAutenticacao::TRIGGER_FALHA = "aa@okcd7";
 
+// Autor: 2110687910
 bool StubIServicoAutenticacao::autenticar(const Email &email, const Senha &senha){
 
     // Apresentar dados recebidos.
@@ -39,7 +38,7 @@ bool StubIServicoAutenticacao::autenticar(const Email &email, const Senha &senha
 bool StubIServicoControle::cadastrar(const Conta conta){
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "dd@okcd7";
     CLR_SCR;
 
     cout << "StubIServicoControle::cadastrar" << endl ;
@@ -64,10 +63,10 @@ bool StubIServicoControle::cadastrar(const Conta conta){
 bool StubIServicoControle::eliminar(const Email email) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "bb@okcd7";
     CLR_SCR;
 
-    cout << endl << "StubIServicoControle::eliminar" << endl ;
+    cout << "StubIServicoControle::eliminar" << endl ;
 
     cout << endl << "Email = " << email.getValor() << endl ;
     cout << endl << "Digite algo pra continuar." << endl ;
@@ -88,10 +87,10 @@ bool StubIServicoControle::eliminar(const Email email) {
 bool StubIServicoControle::editar(const Conta conta) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "bb@okcd7";
     CLR_SCR;
 
-    cout << endl << "StubIServicoControle::editar" << endl ;
+    cout << "StubIServicoControle::editar" << endl ;
 
     cout << endl << "Nome = " << conta.getNome().getValor() << endl ;
     cout << "Email = " << conta.getEmail().getValor() << endl ;
@@ -114,10 +113,10 @@ bool StubIServicoControle::editar(const Conta conta) {
 bool StubIServicoControle::visualizar(const Conta* conta) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "bb@okcd7";
     CLR_SCR;
 
-    cout << endl << "StubIServicoControle::visualizar" << endl ;
+    cout << "StubIServicoControle::visualizar" << endl ;
 
     cout << endl << "Nome = " << conta->getNome().getValor() << endl ;
     cout << "Email = " << conta->getEmail().getValor() << endl ;
@@ -139,11 +138,12 @@ bool StubIServicoControle::visualizar(const Conta* conta) {
 void StubIServicoProjetos::criarQuadro(const Conta conta) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "cc@okcd7";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::criarQuadro" << endl ;
+    cout << "StubIServicoProjetos::criarQuadro" << endl ;
     string valor = conta.getEmail().getValor();
+
     // Diferentes comportamentos dependendo do valor do email.
 
     if (valor == TRIGGER_FALHA) {
@@ -158,12 +158,14 @@ void StubIServicoProjetos::criarQuadro(const Conta conta) {
 void StubIServicoProjetos::visualizarQuadro(const Quadro* quadro) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "AA99";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::visualizarQuadro" << endl ;
-    string valor = quadro->getCodigo().getValor();
+    cout << "StubIServicoProjetos::visualizarQuadro" << endl ;
+
     // Diferentes comportamentos dependendo do valor do código.
+
+    string valor = quadro->getCodigo().getValor();
 
     if (valor == TRIGGER_FALHA) {
         cout << "Visualizar quadro falhou." << endl;
@@ -174,14 +176,16 @@ void StubIServicoProjetos::visualizarQuadro(const Quadro* quadro) {
     getch();
 }
 
-void StubIServicoProjetos::eliminarQuadro(const Quadro quadro) {
+void StubIServicoProjetos::eliminarQuadro(const Conta conta, const Quadro quadro) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "cc@okcd7";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::eliminarQuadro" << endl ;
-    string valor = quadro.getCodigo().getValor();
+    cout << "StubIServicoProjetos::eliminarQuadro" << endl ;
+    string valor = conta.getEmail().getValor();
+
+    cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
@@ -196,11 +200,12 @@ void StubIServicoProjetos::eliminarQuadro(const Quadro quadro) {
 void StubIServicoProjetos::criarCartao(const Quadro quadro) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "AA99";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::criarCartao" << endl ;
+    cout << "StubIServicoProjetos::criarCartao" << endl ;
     string valor = quadro.getCodigo().getValor();
+    cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
@@ -215,11 +220,12 @@ void StubIServicoProjetos::criarCartao(const Quadro quadro) {
 void StubIServicoProjetos::visualizarCartao(const Cartao* cartao) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "AA99";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::visualizarCartao" << endl ;
+    cout << "StubIServicoProjetos::visualizarCartao" << endl ;
     string valor = cartao->getCodigo().getValor();
+    cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
@@ -235,17 +241,40 @@ void StubIServicoProjetos::moverCartao(Coluna coluna) {
 
     // Apresentar dados recebidos.
 
+    const string TRIGGER_FALHA = "COLUNA INVALIDA";
+
+    char texto11[]="Dado em formato incorreto. Digite algo.";
+    char texto13[]="Digite a nova coluna: ";
+    char campo1[80];
+
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::moverCartao" << endl ;
-    string valor = coluna.getValor();
+    cout << "StubIServicoProjetos::moverCartao" << endl ;
+
     // Diferentes comportamentos dependendo do valor da coluna.
 
-    if (valor == TRIGGER_FALHA) {
-        cout << "Mover cartão falhou." << endl;
-    } else {
-        cout << "Mover cartão foi um sucesso." << endl;
+    while(true){
+        CLR_SCR;
+        cout << texto13 << " ";
+        cin.getline(campo1,sizeof(campo1));
+
+        if (campo1 == TRIGGER_FALHA) {
+            cout << "Mover cartão falhou." << endl;
+            break;
+        }
+        Coluna colunaCartao;
+
+        try{
+           colunaCartao.setValor(string(campo1));
+           break;
+        }
+        catch(invalid_argument &exp){
+            CLR_SCR;
+            cout << texto11 << endl;
+            getch();
+        }
     }
+    string valor = coluna.getValor();
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
 }
@@ -253,11 +282,12 @@ void StubIServicoProjetos::moverCartao(Coluna coluna) {
 void StubIServicoProjetos::eliminarCartao(const Cartao cartao) {
 
     // Apresentar dados recebidos.
-
+    const string TRIGGER_FALHA = "AA99";
     CLR_SCR;
 
-    cout << endl << "StubIServicoProjetos::eliminarCartao" << endl ;
+    cout << "StubIServicoProjetos::eliminarCartao" << endl ;
     string valor = cartao.getCodigo().getValor();
+    cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
