@@ -4,19 +4,19 @@ void CntrApresentacaoInicializacao::executar(){
 
     // Mensagens a serem apresentadas na tela inicial.
     char texto0[]="Tela inicial de sistema.";
-    char texto1[]="Selecione um dos serviços : ";
+    char texto1[]="Selecione um dos servicos : ";
     char texto2[]="1 - Autenticar.";
     char texto3[]="2 - Cadastrar.";
-    char texto4[]="3 - Encerrar execução do sistema.";
+    char texto4[]="3 - Encerrar execucao do sistema.";
 
     // Mensagens a serem apresentadas na tela de seleção de serviço.
 
-    char texto5[]="Selecione um dos serviços : ";
+    char texto5[]="Selecione um dos servicos : ";
     char texto6[]="1 - Gerenciamento de conta.";
     char texto7[]="2 - Gerenciar projetos.";
     char texto8[]="3 - Encerrar sessao.";
 
-    char texto9[]="Falha na autenticação. Digite algo para continuar.";                         // Mensagem a ser apresentada.
+    char texto9[]="Falha na autenticacao. Digite algo para continuar.";                         // Mensagem a ser apresentada.
 
     int campo;                                                                                  // Campo de entrada.
 
@@ -191,8 +191,8 @@ void CntrApresentacaoControle::executar(Email email){
     char texto6[]="3 - Visualizar conta.";
     char texto7[]="4 - Voltar.";
 
-    char texto9[]="Sucesso no método requerido. Digite algo.";
-    char texto10[]="Falha no método requerido. Digite algo.";
+    char texto9[]="Sucesso no metodo requerido. Digite algo.";
+    char texto10[]="Falha no metodo requerido. Digite algo.";
 
     int campo;
 
@@ -265,14 +265,14 @@ void CntrApresentacaoProjetos::executar(Email email) {
     char texto2[] ="1 - Criar Quadro.";
     char texto3[] ="2 - Visualizar Quadro.";
     char texto4[] ="3 - Eliminar Quadro.";
-    char texto5[] ="4 - Criar Cartão";
-    char texto6[] ="5 - Visualizar Cartão.";
-    char texto7[] ="6 - Mover Cartão.";
-    char texto8[] ="7 - Eliminar cartão.";
+    char texto5[] ="4 - Criar Cartao";
+    char texto6[] ="5 - Visualizar Cartao.";
+    char texto7[] ="6 - Mover Cartao.";
+    char texto8[] ="7 - Eliminar cartao.";
     char texto9[] ="8 - Retornar.";
-    char texto10[]="Digite o código do quadro: ";
+    char texto10[]="Digite o codigo do quadro: ";
     char texto11[]="Dado em formato incorreto. Digite algo.";
-    char texto12[]="Digite o código do cartão: ";
+    char texto12[]="Digite o codigo do cartao: ";
 
     char campo1[80];
 
