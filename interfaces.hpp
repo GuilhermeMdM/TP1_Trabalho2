@@ -18,7 +18,7 @@ class IApresentacaoAutenticacao{
 
 class IServicoAutenticacao{
     public:
-        virtual bool autenticar(const Email&, const Senha&) = 0;
+        virtual bool autenticar(Email&, Senha&) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
@@ -35,7 +35,7 @@ class IApresentacaoControle{
 class IServicoControle{
     public:
         virtual bool cadastrar(const Conta) = 0;
-        virtual bool eliminar(const Email) = 0;
+        virtual bool eliminar(Email) = 0;
         virtual bool editar(const Conta) = 0;
         virtual bool visualizar(const Conta*) = 0;
         virtual ~IServicoControle(){}
