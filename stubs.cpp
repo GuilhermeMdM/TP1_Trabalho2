@@ -92,9 +92,9 @@ bool StubIServicoControle::editar(const Conta conta) {
 
     cout << "StubIServicoControle::editar" << endl ;
 
-    cout << endl << "Nome = " << conta.getNome().getValor() << endl ;
+    //cout << endl << "Nome = " << conta.getNome().getValor() << endl ;
     cout << "Email = " << conta.getEmail().getValor() << endl ;
-    cout << "Senha = " << conta.getSenha().getValor() << endl ;
+    //cout << endl << "Senha = " << conta.getSenha().getValor() << endl ;
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
 
@@ -118,9 +118,9 @@ bool StubIServicoControle::visualizar(const Conta* conta) {
 
     cout << "StubIServicoControle::visualizar" << endl ;
 
-    cout << endl << "Nome = " << conta->getNome().getValor() << endl ;
-    cout << "Email = " << conta->getEmail().getValor() << endl ;
-    cout << "Senha = " << conta->getSenha().getValor() << endl ;
+    //cout << endl << "Nome = " << conta->getNome().getValor() << endl ;
+    cout << endl << "Email = " << conta->getEmail().getValor() << endl ;
+    //cout << "Senha = " << conta->getSenha().getValor() << endl ;
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
 
@@ -205,13 +205,13 @@ void StubIServicoProjetos::criarCartao(const Quadro quadro) {
 
     cout << "StubIServicoProjetos::criarCartao" << endl ;
     string valor = quadro.getCodigo().getValor();
-    cout << "Conta: " << valor << endl;
+    //cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
-        cout << "Criar cartão falhou." << endl;
+        cout << "Criar cartao falhou." << endl;
     } else {
-        cout << "Criar cartão foi um sucesso." << endl;
+        cout << "Criar cartao foi um sucesso." << endl;
     }
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
@@ -225,13 +225,13 @@ void StubIServicoProjetos::visualizarCartao(const Cartao* cartao) {
 
     cout << "StubIServicoProjetos::visualizarCartao" << endl ;
     string valor = cartao->getCodigo().getValor();
-    cout << "Conta: " << valor << endl;
+    //cout << "Conta: " << valor << endl;
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
-        cout << "Visualizar cartão falhou." << endl;
+        cout << "Visualizar cartao falhou." << endl;
     } else {
-        cout << "Visualizar cartão foi um sucesso." << endl;
+        cout << "Visualizar cartao foi um sucesso." << endl;
     }
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
@@ -259,7 +259,7 @@ void StubIServicoProjetos::moverCartao(Coluna coluna) {
         cin.getline(campo1,sizeof(campo1));
 
         if (campo1 == TRIGGER_FALHA) {
-            cout << "Mover cartão falhou." << endl;
+            cout << "Mover cartao falhou." << endl;
             break;
         }
         Coluna colunaCartao;
@@ -291,9 +291,9 @@ void StubIServicoProjetos::eliminarCartao(const Cartao cartao) {
     // Diferentes comportamentos dependendo do valor do código.
 
     if (valor == TRIGGER_FALHA) {
-        cout << "Eliminação do cartão falhou." << endl;
+        cout << "Eliminacao do cartao falhou." << endl;
     } else {
-        cout << "Eliminação do cartão foi um sucesso." << endl;
+        cout << "Eliminacao do cartao foi um sucesso." << endl;
     }
     cout << endl << "Digite algo pra continuar." << endl ;
     getch();
