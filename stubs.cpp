@@ -60,7 +60,7 @@ bool StubIServicoControle::cadastrar(const Conta conta){
     return resultado;
 }
 
-bool StubIServicoControle::eliminar(email) {
+bool StubIServicoControle::eliminar(Email email) {
 
     // Apresentar dados recebidos.
     const string TRIGGER_FALHA = "bb@okcd7";
