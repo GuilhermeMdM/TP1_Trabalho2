@@ -7,7 +7,7 @@
 const string StubIServicoAutenticacao::TRIGGER_FALHA = "aa@okcd7";
 
 // Autor: 2110687910
-bool StubIServicoAutenticacao::autenticar(const Email &email, const Senha &senha){
+bool StubIServicoAutenticacao::autenticar(Email &email, Senha &senha){
 
     // Apresentar dados recebidos.
 
@@ -60,7 +60,7 @@ bool StubIServicoControle::cadastrar(const Conta conta){
     return resultado;
 }
 
-bool StubIServicoControle::eliminar(Email email) {
+bool StubIServicoControle::eliminar(email) {
 
     // Apresentar dados recebidos.
     const string TRIGGER_FALHA = "bb@okcd7";
